@@ -12,17 +12,7 @@ jobs:
     strategy:
       matrix:
         ncs_branch:
-          - main
-          - v2.4-branch
-          - v2.3-branch
-          - v2.2-branch
-          - v2.1-branch
           - v2.0-branch
-          - v1.9-branch
-          - v1.8-branch
-          - v1.7-branch
-          - v1.6-branch
-          - v1.5-branch
         include:
           # Defaults
           - ZEPHYR_TOOLCHAIN_VERSION: 0.16.0
@@ -31,51 +21,51 @@ jobs:
             asset_tracker: disable
             asset_tracker_v2: enable
 
-          - ncs_branch: v2.4-branch
+          # - ncs_branch: v2.4-branch
 
-          - ncs_branch: v2.3-branch
-            ZEPHYR_TOOLCHAIN_VERSION: 0.15.2
-            ZEPHYR_TOOLCHAIN_ARCHIVE_FORMAT: gz
+          # - ncs_branch: v2.3-branch
+          #   ZEPHYR_TOOLCHAIN_VERSION: 0.15.2
+          #   ZEPHYR_TOOLCHAIN_ARCHIVE_FORMAT: gz
 
-          - ncs_branch: v2.2-branch
-            ZEPHYR_TOOLCHAIN_VERSION: 0.15.1
-            ZEPHYR_TOOLCHAIN_ARCHIVE_FORMAT: gz
+          # - ncs_branch: v2.2-branch
+          #   ZEPHYR_TOOLCHAIN_VERSION: 0.15.1
+          #   ZEPHYR_TOOLCHAIN_ARCHIVE_FORMAT: gz
 
-          - ncs_branch: v2.1-branch
-            ZEPHYR_TOOLCHAIN_VERSION: 0.14.1
-            ZEPHYR_TOOLCHAIN_ARCHIVE_FORMAT: gz
+          # - ncs_branch: v2.1-branch
+          #   ZEPHYR_TOOLCHAIN_VERSION: 0.14.1
+          #   ZEPHYR_TOOLCHAIN_ARCHIVE_FORMAT: gz
 
           - ncs_branch: v2.0-branch
             ZEPHYR_TOOLCHAIN_VERSION: 0.14.1
             ZEPHYR_TOOLCHAIN_ARCHIVE_FORMAT: gz
 
-          - ncs_branch: v1.9-branch
-            ZEPHYR_TOOLCHAIN_VERSION: 0.14.1
-            ZEPHYR_TOOLCHAIN_ARCHIVE_FORMAT: gz
+          # - ncs_branch: v1.9-branch
+          #   ZEPHYR_TOOLCHAIN_VERSION: 0.14.1
+          #   ZEPHYR_TOOLCHAIN_ARCHIVE_FORMAT: gz
 
-          - ncs_branch: v1.8-branch
-            ZEPHYR_TOOLCHAIN_VERSION: 0.14.1
-            ZEPHYR_TOOLCHAIN_ARCHIVE_FORMAT: gz
-            asset_tracker: enable
+          # - ncs_branch: v1.8-branch
+          #   ZEPHYR_TOOLCHAIN_VERSION: 0.14.1
+          #   ZEPHYR_TOOLCHAIN_ARCHIVE_FORMAT: gz
+          #   asset_tracker: enable
 
-          - ncs_branch: v1.7-branch
-            ZEPHYR_TOOLCHAIN_VERSION: 0.14.1
-            ZEPHYR_TOOLCHAIN_ARCHIVE_FORMAT: gz
-            asset_tracker: enable
+          # - ncs_branch: v1.7-branch
+          #   ZEPHYR_TOOLCHAIN_VERSION: 0.14.1
+          #   ZEPHYR_TOOLCHAIN_ARCHIVE_FORMAT: gz
+          #   asset_tracker: enable
 
-          - ncs_branch: v1.6-branch
-            ZEPHYR_TOOLCHAIN_VERSION: 0.14.1
-            ZEPHYR_TOOLCHAIN_ARCHIVE_FORMAT: gz
-            asset_tracker: enable
+          # - ncs_branch: v1.6-branch
+          #   ZEPHYR_TOOLCHAIN_VERSION: 0.14.1
+          #   ZEPHYR_TOOLCHAIN_ARCHIVE_FORMAT: gz
+          #   asset_tracker: enable
 
-          - ncs_branch: v1.5-branch
-            ZEPHYR_TOOLCHAIN_VERSION: 0.14.1
-            ZEPHYR_TOOLCHAIN_ARCHIVE_FORMAT: gz
-            # asset_tracker_v2 needs configuration in 1.5
-            asset_tracker_v2: disable
-            asset_tracker: enable
+          # - ncs_branch: v1.5-branch
+          #   ZEPHYR_TOOLCHAIN_VERSION: 0.14.1
+          #   ZEPHYR_TOOLCHAIN_ARCHIVE_FORMAT: gz
+          #   # asset_tracker_v2 needs configuration in 1.5
+          #   asset_tracker_v2: disable
+          #   asset_tracker: enable
 
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v3
 
