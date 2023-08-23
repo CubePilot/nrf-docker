@@ -128,6 +128,9 @@ jobs:
       - name: Login to Github Container Registry
         run: |
           echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
+      - name: Tag image
+        run: |
+          docker tag cubepilot/nrfconnect-sdk:${{ matrix.ncs_branch }} ghcr.io/cubepilot/nrfconnect-sdk:${{ matrix.ncs_branch }}
       - name: Push image
         run: |
           docker push ghcr.io/cubepilot/nrfconnect-sdk:${{ matrix.ncs_branch }}
